@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { iJSONresponse } from '../../../interfaces/jsonresponse';
 
 @Component({
   selector: '.app-featured-post',
   templateUrl: './featured-post.component.html',
   styleUrl: './featured-post.component.scss',
 })
-export class FeaturedPostComponent {
+export class FeaturedPostComponent implements OnInit {
   featuredPost: any = {};
   featuredIndex: number = 0;
 
@@ -14,9 +15,7 @@ export class FeaturedPostComponent {
 
     // esegue al caricamento del componente
     fetch('db.json')
-      .then((res) => {
-        return res.json();
-      })
+      .then((res) => <Promise<iJSONresponse>>res.json())
       .then((data) => {
         this.featuredPost = data.posts[this.featuredIndex];
       })

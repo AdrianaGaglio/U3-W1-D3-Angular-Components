@@ -3,15 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ActivePostsComponent } from './components/active-posts/active-posts.component';
-import { InactivePostsComponent } from './components/inactive-posts/inactive-posts.component';
-import { PostDetailComponent } from './components/post-detail/post-detail.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { HomeComponent } from './components/home/home.component';
-import { HeaderComponent } from './components/header/header.component';
-import { MenuComponent } from './components/menu/menu.component';
-import { FeaturedPostComponent } from './components/featured-post/featured-post.component';
-import { RelatedPostsComponent } from './components/related-posts/related-posts.component';
+import { ActivePostsComponent } from './components/pages/active-posts/active-posts.component';
+import { InactivePostsComponent } from './components/pages/inactive-posts/inactive-posts.component';
+import { PostDetailComponent } from './components/pages/post-detail/post-detail.component';
+import { NavbarComponent } from './components/main-components/navbar/navbar.component';
+import { HomeComponent } from './components/pages/home/home.component';
+import { HeaderComponent } from './components/main-components/header/header.component';
+import { MenuComponent } from './components/main-components/menu/menu.component';
+import { FeaturedPostComponent } from './components/single-components/featured-post/featured-post.component';
+import { RelatedPostsComponent } from './components/single-components/related-posts/related-posts.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +24,10 @@ import { RelatedPostsComponent } from './components/related-posts/related-posts.
     HeaderComponent,
     MenuComponent,
     FeaturedPostComponent,
-    RelatedPostsComponent
+    RelatedPostsComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
-import { iPost } from '../../interfaces/ipost';
+import { Component, OnInit } from '@angular/core';
+import { iPost } from '../../../interfaces/ipost';
+import { iJSONresponse } from '../../../interfaces/jsonresponse';
 
 @Component({
-  selector: '.app-home',
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+  selector: '.app-related-posts',
+  templateUrl: './related-posts.component.html',
+  styleUrl: './related-posts.component.scss',
 })
-export class HomeComponent {
+export class RelatedPostsComponent implements OnInit {
   posts: iPost[] = [];
   relatedPosts: iPost[] = [];
   featuredIndex: number = 0;
@@ -15,12 +16,9 @@ export class HomeComponent {
   ngOnInit() {
     // esegue al caricamento del componente
     fetch('db.json')
-      .then((res) => {
-        return res.json();
-      })
+      .then((res) => <Promise<iJSONresponse>>res.json())
       .then((data) => {
         this.posts = data.posts;
-        console.log(this.posts);
         for (let i = 0; i < 4; i++) {
           this.index =
             Math.floor(Math.random() * 30) !== this.featuredIndex
