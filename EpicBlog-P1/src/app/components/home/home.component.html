@@ -1,0 +1,32 @@
+<div class="container mb-3">
+  <div class="bg-body-tertiary p-3 rounded-3">
+    <h4 [innerHTML]="featuredPost.title"></h4>
+    <p [innerHTML]="featuredPost.body"></p>
+    <span
+      class="mx-1 p-1 badge text-bg-primary"
+      *ngFor="let tag of featuredPost.tags"
+      [innerHTML]="tag"
+    ></span>
+  </div>
+</div>
+<div class="container">
+  <h5>Potrebbero piacerti questi post</h5>
+  <div class="row row-cols-4">
+    <div class="col" *ngFor="let post of relatedPosts">
+      <div class="card h-100 p-2 shadow-sm">
+        <h6 [innerHTML]="post.title"></h6>
+        <p
+          class="flex-grow-1 text-nowrap overflow-hidden text-truncate"
+          [innerHTML]="post.body"
+        ></p>
+        <div>
+          <span
+            class="mx-1 p-1 badge text-bg-info"
+            *ngFor="let tag of post.tags"
+            [innerHTML]="tag"
+          ></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
