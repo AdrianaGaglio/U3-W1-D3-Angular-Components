@@ -1,0 +1,9 @@
+<div class="bg-body-tertiary p-3 rounded-3">
+  <h4 [innerHTML]="featuredPost.title"></h4>
+  <p [innerHTML]="featuredPost.body"></p>
+  <span
+    class="mx-1 p-1 badge text-bg-primary"
+    *ngFor="let tag of featuredPost.tags"
+    [innerHTML]="tag"
+  ></span>
+</div>
