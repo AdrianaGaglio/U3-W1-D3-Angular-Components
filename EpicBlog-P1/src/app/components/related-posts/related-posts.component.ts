@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { iPost } from '../../../interfaces/ipost';
-import { iJSONresponse } from '../../../interfaces/jsonresponse';
+import { iPost } from '../../interfaces/ipost';
+import { iJSONresponse } from '../../interfaces/ijsonresponse';
 
 @Component({
-  selector: '.app-home',
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+  selector: '.app-related-posts',
+  templateUrl: './related-posts.component.html',
+  styleUrl: './related-posts.component.scss',
 })
-export class HomeComponent implements OnInit {
+export class RelatedPostsComponent implements OnInit {
   posts: iPost[] = [];
   relatedPosts: iPost[] = [];
   featuredIndex: number = 0;

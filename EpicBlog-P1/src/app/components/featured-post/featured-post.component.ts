@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { iJSONresponse } from '../../../interfaces/jsonresponse';
+import { iJSONresponse } from '../../interfaces/ijsonresponse';
 
 @Component({
   selector: '.app-featured-post',
